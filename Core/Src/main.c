@@ -125,7 +125,7 @@ int main(void)
  // app
 #else
 		evb_setup_adc(0, ENABLE);
-		evb_setup_timer(TIM3, qst_evb_adc_read, 100, DISABLE);
+		evb_setup_timer(TIM3, qst_evb_adc_read, 100, ENABLE);
 #endif
 	
 // key irq
