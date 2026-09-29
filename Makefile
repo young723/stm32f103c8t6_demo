@@ -41,6 +41,7 @@ MCU = -mcpu=cortex-m3 -mthumb
 ######################################
 DEFS = -DUSE_HAL_DRIVER -DSTM32F103xB
 DEFS += -DUSE_MAKEFILE
+DEFS += -DGAME_DEMO
 # DEFS += -DUSE_DUAL_OLED
 
 ######################################

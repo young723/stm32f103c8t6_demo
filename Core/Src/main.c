@@ -104,6 +104,7 @@ int main(void)
 	g_evb.port = INTERFACE_I2C_HW;
 	bsp_port_init(&g_evb.port, 0);
 // oled
+#if defined(GAME_DEMO)
 	oled_set_lcm(OLED_LCM_0);
 	oled_init();
 #if defined(USE_DUAL_OLED)
@@ -122,6 +123,10 @@ int main(void)
  	git_cat_init(GIF_CAT_B);	// tim3 lcm1(pb10 pb11 i2c2)
  #endif
  // app
+#else
+		evb_setup_adc(0, ENABLE);
+		evb_setup_timer(TIM3, qst_evb_adc_read, 100, DISABLE);
+#endif
 	
 // key irq
 	// evb_setup_user_key(QST_KEY2, qst_evb_key_irq1, 1);
